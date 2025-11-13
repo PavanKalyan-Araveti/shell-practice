@@ -2,4 +2,4 @@
 
 echo "Please enter your PIN number"
 read -s PIN_NUMBER #here pin number is variable
-echo "PIN enteres is: $PIN_NUMBER"
+echo "PIN enteres is: $PIN_NUMBER" #for testing purpose
