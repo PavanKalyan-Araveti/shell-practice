@@ -7,10 +7,10 @@ N="\e[0m"
 
 
 USERID=$(id -u)
-FOLEDER_NAME="/var/log/shell-script"
+LOGS_FOLDER="/var/log/shell-script"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
-LOG_FILE="$FOLDER_NAME/SCRIPT_NAME.log"
-mkdir -p $FOLDER_NAME
+LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
+mkdir -p $LOGS_FOLDER
 echo "Script started executed at: $(date)"
 
 if [ $USERID -ne 0 ]; then
