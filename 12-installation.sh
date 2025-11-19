@@ -16,26 +16,11 @@ VALIDATE(){ #function receive inputs through args just like shell script
     fi    
 }
 
-dnf list installed mysql
-if [ $? -ne 0 ]; then
-    dnf install mysql -y
-    VALIDATE $? "MySQL"
-else 
-    echo "Mysql Package is already installed"
-fi
+dnf install mysql -y
+VALIDATE $? "MySQL"
 
-dnf list installed nginx
-if [ $? -ne 0 ]; then
-    dnf install nginx -y
-    VALIDATE $? "nginx"
-else 
-    echo "nginx Package is already installed"
-fi
+dnf install nginx -y
+VALIDATE $? "nginx"
 
-dnf list installed python3
-if [ $? -ne 0 ]; then
-    dnf install python3 -y
-    VALIDATE $? "python3"
-else 
-    echo "python3 Package is already installed"
-fi
+dnf install python3 -y
+VALIDATE $? "python3"
