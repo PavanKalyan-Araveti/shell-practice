@@ -8,10 +8,9 @@ N="\e[0m"
 
 USERID=$(id -u)
 FOLEDER_NAME="/var/log/shell-script"
-mkdir -p $FOLDER_NAME
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 LOG_FILE="$FOLDER_NAME/SCRIPT_NAME.log"
-
+mkdir -p $FOLDER_NAME
 echo "Script started executed at: $(date)"
 
 if [ $USERID -ne 0 ]; then
@@ -48,7 +47,7 @@ fi
 dnf list installed python3 &>> $LOG_FILE
 if [ $? -ne 0 ]; then
     dnf install python3 -y &>> $LOG_FILE
-    
+
     VALIDATE $? "python3"
 else 
     echo -e "python3 Package is already exits..... $Y SKIPPING $N"
