@@ -12,13 +12,13 @@ LOG_FILE="$LOGS_FOLDER/$LOG_FILE.log"
 mkdir -p $LOGS_FOLDER
 echo "Scripting started executing at : $(date)"
 
-if [ $USERID -ne 0]; then
+if [ $USERID -ne 0 ]; then
     echo "ERROR: Please run this script with root privilage"
     exit -1
 fi
 
 VALIDATE(){
-    if [ $1 -ne 0]; then
+    if [ $1 -ne 0 ]; then
         echo -e "ERROR: Installation of $2 is $R Failure $N"
         exit 1
     else
@@ -30,7 +30,7 @@ for package in $@
 do
     dnf list installed $package &>>$LOG_FILE
 
-    if [ $? -ne 0]; then
+    if [ $? -ne 0 ]; then
         dnf install $package -y &>>$LOG_FILE
         VALIDATE $? "$package"
     else 
