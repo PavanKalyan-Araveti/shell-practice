@@ -12,7 +12,7 @@ LOG_FILE="$LOGS_FOLDER/$LOG_FILE.log"
 mkdir -p $LOGS_FOLDER
 echo "Scripting started executing at : $(date)"
 
-if[ $USERID -ne 0]; then
+if [ $USERID -ne 0]; then
     echo "ERROR: Please run this script with root privilage"
     exit -1
 fi
